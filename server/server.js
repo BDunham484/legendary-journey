@@ -19,7 +19,7 @@ const { authMiddleware } = require('./utils/auth');
 
 
 //set environment variable
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3003;
 //create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
     typeDefs,
