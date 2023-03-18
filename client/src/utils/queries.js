@@ -227,3 +227,12 @@ export const GET_CONCERT_BY_ID = gql`
         }
     }
 `;
+
+export const ALL_CONCERTS = gql`
+query allConcerts {
+    allConcerts {
+        date
+        artists
+    }
+}
+`;
