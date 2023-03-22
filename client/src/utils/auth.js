@@ -10,7 +10,7 @@ class AuthService {
         //checks if there is a saved token and it's still valid
         const token = this.getToken();
         //use type coersion to check if token is NOT undefined and the token is NOT expired
-        return !!token&& !this.isTokenExpired(token);
+        return !!token && !this.isTokenExpired(token);
     }
     //check if the token has expired
     isTokenExpired(token) {
@@ -27,8 +27,11 @@ class AuthService {
     }
     //retrieve token from localStorage
     getToken() {
-        //retrieves the user token from localStorage
-        return localStorage.getItem('id_token');
+        if (typeof window !== 'undefined') {
+            //retrieves the user token from localStorage
+            return localStorage.getItem('id_token');
+        }
+
     }
     //set token to localStroage and reload page to homepage
     login(idToken) {

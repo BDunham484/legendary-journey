@@ -67,8 +67,6 @@ const Login = () => {
                 </form>
             </FormCard>
         </div>
-
-
     )
 }
 
