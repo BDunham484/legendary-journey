@@ -8,12 +8,14 @@ class AuthService {
         return decode(this.getToken());
     }
     // check of the user is still logged in
-    // loggedIn() {
-    //     //checks if there is a saved token and it's still valid
-    //     const token = this.getToken();
-    //     //use type coersion to check if token is NOT undefined and the token is NOT expired
-    //     return !!token && !this.isTokenExpired(token);
-    // }
+    loggedIn() {
+        //checks if there is a saved token and it's still valid
+        const token = this.getToken();
+        // window.location.assign('/ControlCenter');
+
+        //use type coersion to check if token is NOT undefined and the token is NOT expired
+        return !!token && !this.isTokenExpired(token);
+    }
     //check if the token has expired
     isTokenExpired(token) {
         try {
@@ -28,28 +30,28 @@ class AuthService {
         }
     }
 
-        // retrieve token from localStorage
-        // getToken() {
-        //     // if (typeof window !== 'undefined') {
-        //         //retrieves the user token from localStorage
-        //         return localStorage.getItem('id_token');
-        //     // }
+    // retrieve token from localStorage
+    getToken() {
+        // if (typeof window !== 'undefined') {
+        //retrieves the user token from localStorage
+        return localStorage.getItem('id_token');
         // }
+    }
 
-//set token to localStroage and reload page to homepage
-login(idToken) {
-    //saves user token to localStorage
-    localStorage.setItem('id_token', idToken);
+    //set token to localStroage and reload page to homepage
+    login(idToken) {
+        //saves user token to localStorage
+        localStorage.setItem('id_token', idToken);
 
-    window.location.assign('/');
-}
-//clear token from localStorage and force logout with reload
-logout() {
-    //clear user token and profile data from localStorage
-    localStorage.removeItem('id_token');
-    //this will reload the page and reset the state of the application
-    window.location.assign('/');
-}
+        window.location.assign('/');
+    }
+    //clear token from localStorage and force logout with reload
+    logout() {
+        //clear user token and profile data from localStorage
+        localStorage.removeItem('id_token');
+        //this will reload the page and reset the state of the application
+        window.location.assign('/');
+    }
 }
 
 export default new AuthService();

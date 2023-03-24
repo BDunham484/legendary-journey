@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Login from './Login'
 import Header from '@/components/Header'
 // import TestPage from './Test'
-import ControlCenter from './ControlCenter'
+// import ControlCenter from './ControlCenter'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +22,7 @@ export default function Home() {
         <div className={styles.description}>
           <Header />
           {/* <TestPage /> */}
-          <ControlCenter />
+          {/* <ControlCenter /> */}
         </div>
       </main>
     </>

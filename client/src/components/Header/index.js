@@ -13,16 +13,30 @@ const Header = () => {
     };
 
     // Auth.loggedIn() & Auth.getToken() were causing errors because nextjs server-side rendering couldn't recognize localstorage.  moving the function to component and wrapping in useEffect fixed the issue.  May need to consider moving this setup to globalState and passing isLoggedIn state down as props/context to appropriate components.
-    useEffect(() => {
-        const loggedIn = () => {
-            const token = localStorage.getItem('id_token');
-            if (!!token && !Auth.isTokenExpired(token)) {
-                setIsLoggedIn(true);
-            }
-            // return !!token && !Auth.isTokenExpired(token);
-        }
+    // useEffect(() => {
+    //     const loggedIn = () => {
+    //         const token = localStorage.getItem('id_token');
+    //         if (!!token && !Auth.isTokenExpired(token)) {
+    //             setIsLoggedIn(true);
+    //         }
+    //         // return !!token && !Auth.isTokenExpired(token);
+    //     }
 
-        loggedIn();
+    //     loggedIn();
+    // }, [])
+    useEffect(() => {
+        // const loggedIn = () => {
+        //     const token = localStorage.getItem('id_token');
+            
+            
+        //     // return !!token && !Auth.isTokenExpired(token);
+        // }
+
+        const token = Auth.loggedIn();
+        console.log(token);
+        if (token) {
+            setIsLoggedIn(true);
+        }
     }, [])
 
 
@@ -41,7 +55,7 @@ const Header = () => {
                     {isLoggedIn ? (
                         <ul>
                             <li>
-                                <Link href="/profile">Profile</Link>
+                                <Link href="/ControlCenter">Control</Link>
                             </li>
                             <li>
                                 <Link href="/" onClick={logout}>
