@@ -1,5 +1,5 @@
 import Header from "@/components/Header"
-import styles from '@/styles/ControlCenter.module.css'
+import styles from '@/styles/Control.module.css'
 
 
 const ControlCenter = () => {
@@ -7,7 +7,9 @@ const ControlCenter = () => {
         <div>
             <Header />
                 <main id={styles.main}>
+                    <div className={styles.container}>
                     CONTROLCENTER
+                    </div>
                 </main>
         </div>
 

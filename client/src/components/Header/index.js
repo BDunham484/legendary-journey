@@ -55,7 +55,7 @@ const Header = () => {
                     {isLoggedIn ? (
                         <ul>
                             <li>
-                                <Link href="/ControlCenter">Control</Link>
+                                <Link href="/Control">Control</Link>
                             </li>
                             <li>
                                 <Link href="/" onClick={logout}>
