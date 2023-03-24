@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 
 
 const TestPage = () => {
-    const date = 'Sat Mar 13 2023';
+    const date = 'Fri Mar 24 2023';
     const { loading, data } = useQuery(ALL_CONCERTS);
     const concerts = data?.allConcerts || [];
 
