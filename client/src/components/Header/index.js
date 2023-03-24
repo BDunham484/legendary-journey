@@ -10,6 +10,7 @@ const Header = () => {
     const logout = event => {
         event.preventDefault();
         Auth.logout();
+        setIsLoggedIn(false);
     };
 
     // Auth.loggedIn() & Auth.getToken() were causing errors because nextjs server-side rendering couldn't recognize localstorage.  moving the function to component and wrapping in useEffect fixed the issue.  May need to consider moving this setup to globalState and passing isLoggedIn state down as props/context to appropriate components.
@@ -24,6 +25,7 @@ const Header = () => {
 
         loggedIn();
     }, [])
+
 
     return (
             <header>

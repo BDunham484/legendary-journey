@@ -30,10 +30,10 @@ class AuthService {
 
         // retrieve token from localStorage
         // getToken() {
-        //     if (typeof window !== 'undefined') {
+        //     // if (typeof window !== 'undefined') {
         //         //retrieves the user token from localStorage
         //         return localStorage.getItem('id_token');
-        //     }
+        //     // }
         // }
 
 //set token to localStroage and reload page to homepage
