@@ -22,3 +22,15 @@
 .date {
     margin-bottom: 3vh;
 }
+
+.scrapeButton {
+    background-color: var(--darker);
+    padding: 15px;
+    margin-top: 3vh;
+    color: antiquewhite;
+    border-radius: 8px;
+}
+
+.scrapeButton:hover {
+    cursor: pointer;
+}

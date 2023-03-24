@@ -1,10 +1,11 @@
-import { useState } from "react"
-import { useQuery } from '@apollo/client'
+import { useState, useEffect } from "react"
+import { useLazyQuery, useQuery } from '@apollo/client'
 import { AUSTIN_CONCERT_SCRAPER } from "@/utils/queries"
 import { getTodaysDate } from '../utils/helpers';
 import Header from "@/components/Header"
 import Switch from 'react-switch'
 import styles from '@/styles/Control.module.css'
+import AustinScraper from "@/components/AustinScraper";
 
 
 
@@ -20,16 +21,13 @@ const ControlCenter = () => {
     //get today's date with imported helper function
     var today = getTodaysDate();
     console.log("TODAY: " + today);
-    //set initial state using today's date
-    const [date, setDate] = useState(today);
-
 
     return (
         <div>
             <Header />
             <main id={styles.main}>
                 <div className={styles.container}>
-                    <div className={styles.date}>{date}</div>
+                    <div className={styles.date}>{today}</div>
                     <Switch
                         onChange={handleControlSwitch}
                         checked={controlSwitch}
@@ -42,6 +40,10 @@ const ControlCenter = () => {
                         boxShadow={'#eee3d0'}
                         activeBoxShadow={'#eee3d0'}
                     />
+                    {controlSwitch &&
+                        <AustinScraper />
+                    }
+
                 </div>
             </main>
         </div>
