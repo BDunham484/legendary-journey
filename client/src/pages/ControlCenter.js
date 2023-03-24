@@ -1,16 +1,14 @@
 import Header from "@/components/Header"
-import FormCard from "@/components/shared/FormCard"
+import styles from '@/styles/ControlCenter.module.css'
+
 
 const ControlCenter = () => {
     return (
         <div>
             <Header />
-            <FormCard>
-                <div>
+                <main id={styles.main}>
                     CONTROLCENTER
-                </div>
-            </FormCard>
-
+                </main>
         </div>
 
     )
