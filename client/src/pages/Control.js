@@ -5,7 +5,7 @@ import { getTodaysDate } from '../utils/helpers';
 import Header from "@/components/Header"
 import Switch from 'react-switch'
 import styles from '@/styles/Control.module.css'
-import AustinScraper from "@/components/AustinScraper";
+import AustinScraper from "@/components/Scrapers/AustinScraper";
 
 
 

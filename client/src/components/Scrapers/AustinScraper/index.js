@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useQuery } from "@apollo/client"
 import { AUSTIN_CONCERT_SCRAPER } from "@/utils/queries"
 import { getTodaysDate } from "@/utils/helpers"
+import AustinDbUpdater from "@/components/DB_Updaters/AustinDbUpdater"
 
 const AustinScraper = () => {
     //get today's date with imported helper function
@@ -59,11 +60,25 @@ const AustinScraper = () => {
         console.log(concertData);
     };
 
+    const [austinScraper, setAustinScraper] = useState([[]]);
+
+    useEffect(() => {
+        if (concertData) {
+            const concertDataArr = concertData.austinConcertScraper
+            setAustinScraper(concertDataArr)
+        }
+
+    }, [concertData, austinScraper])
+
 
     return (
         <div>
-            Austin Scraper is running...
+            <div>
+                Austin Scraper is running...
+            </div>
+            <AustinDbUpdater today={today} date={date} austinScraper={austinScraper} />
         </div>
+
     )
 }
 
