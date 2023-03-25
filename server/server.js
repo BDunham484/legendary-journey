@@ -45,7 +45,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
     }
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/next/static/chunks/pages/_app.js'));
+        res.sendFile(path.join(__dirname, '../client/.next/'));
     });
     // app.get('*', (req, res) => {
     //     res.sendFile(path.join(__dirname, '../client/build/index.html'));
