@@ -5,7 +5,7 @@ import { setContext } from '@apollo/client/link/context';
 
 
 const SERVER_URL = 
-  process.env.NODE_ENV === 'production' ? 'https://www.sample.com' : 'http://localhost:3003'
+  process.env.NODE_ENV === 'production' ? 'https://secret-atoll-68298.herokuapp.com' : 'http://localhost:3003'
 
 const httpLink = createHttpLink({
   uri: `${SERVER_URL}/graphql`,
