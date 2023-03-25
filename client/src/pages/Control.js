@@ -6,6 +6,8 @@ import Header from "@/components/Header"
 import Switch from 'react-switch'
 import styles from '@/styles/Control.module.css'
 import AustinScraper from "@/components/Scrapers/AustinScraper";
+import AustinDbCleaner from "@/components/DB_Cleaners/AustinDbCleaner";
+
 
 
 
@@ -41,7 +43,10 @@ const ControlCenter = () => {
                         activeBoxShadow={'#eee3d0'}
                     />
                     {controlSwitch &&
-                        <AustinScraper />
+                        <div>
+                            <AustinScraper />
+                            <AustinDbCleaner today={today}/>
+                        </div>
                     }
 
                 </div>
