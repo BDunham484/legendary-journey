@@ -45,8 +45,11 @@ const startApolloServer = async (typeDefs, resolvers) => {
     }
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'));
+        res.sendFile(path.join(__dirname, '../client/next/static/chunks/pages/_app.js'));
     });
+    // app.get('*', (req, res) => {
+    //     res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    // });
 
     //establish connection to server via the listen() method
     db.once('open', () => {
