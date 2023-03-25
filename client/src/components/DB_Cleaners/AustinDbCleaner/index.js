@@ -1,5 +1,5 @@
-import { useMutation } from "@apollo/client";
-import { useQuery } from "@apollo/client";
+import { useEffect } from "react";
+import { useMutation, useQuery } from "@apollo/client";
 import { DELETE_CONCERTS } from "@/utils/mutations";
 import { GET_YESTERDAYS_CONCERTS } from "@/utils/queries";
 
@@ -45,7 +45,7 @@ const AustinDbCleaner = ({ today }) => {
 
     return (
         <div>
-
+            Austin Cleaner is Running...
         </div>
     )
 }
